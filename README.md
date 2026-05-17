@@ -196,4 +196,4 @@ jupyter notebook project.ipynb
 
 **Ebrahim Alsawan**
 
-- LinkedIn: linkedin.com/in/Ebrahim-Alsawan
+- LinkedIn: [linkedin.com/in/Ebrahim-Alsawan](https://www.linkedin.com/in/ebrahim-alsawan-a6977a2b9/)
