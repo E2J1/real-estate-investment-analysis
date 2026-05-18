@@ -2,79 +2,55 @@
 
 A full Exploratory Data Analysis (EDA) and market intelligence project analyzing **147,000 global real estate listings across 27 countries** using Python and Pandas.
 
-This project was developed as part of the Data Analytics Bootcamp at General Assembly and focuses on uncovering investment trends, pricing drivers, and high-value real estate opportunities across international markets.
+This project was developed as part of the **Data Analytics Bootcamp at General Assembly** and focuses on uncovering investment trends, pricing drivers, and high-value real estate opportunities across international markets.
 
 ---
 
-# Consultancy Scenario
+# 📌 Consultancy Scenario & Project Overview
 
 This project was developed as part of a simulated consulting engagement for a real estate investor seeking data-driven insights into global property markets.
 
-Using over 147,000 international property listings across 27 countries, the analysis focused on:
+Using over **147,000 international property listings across 27 countries**, the analysis focused on:
+
 - Identifying high-value investment markets
 - Comparing property types across regions
 - Understanding pricing drivers
 - Evaluating the impact of building age and property size on valuation
 
-The project combined Python-based exploratory data analysis, feature engineering, and business-focused visual storytelling to support investment decision-making.
-
----
-
-## 📸 Analysis Preview
-
-### Median Property Prices by Country
-
-![Median Price by Country](images/median-price-country.png)
-
-### Property Type Price Comparison
-
-![Property Type Prices](images/property-type-prices.png)
-
-### Living Area vs Price Correlation
-
-![Area vs Price](images/area-vs-price.png)
-
-> Strong positive relationship identified between property size and listing price (Pearson correlation: 0.679).
-
-### Building Age Analysis
-
-![Building Age Analysis](images/building-age-analysis.png)
-
----
-
-# 📌 Project Overview
-
-This project follows the complete data analytics workflow:
+The project followed the complete data analytics workflow:
 
 ```text
 Frame → Extract → Wrangle/Prepare → Analyze → Interpret → Communicate
 ```
 
 The goal was to transform raw international property listing data into actionable business intelligence through:
+
 - Data cleaning
 - Feature engineering
 - Statistical analysis
 - Exploratory visualizations
 - Market comparison analysis
 
-The analysis focused on uncovering the key drivers behind property valuation and identifying promising investment opportunities worldwide.
-
 ---
 
-# 🧩 Business Problem
+# 🧩 Business Problem & Business Questions
 
 A real estate investor approached our consulting firm seeking data-driven guidance on global property markets, with a focus on identifying trends and potential investment opportunities.
 
-Three core business challenges were identified:
+## Core Business Challenges
 
-### Investment Locations
+### 🌍 Investment Locations
+
 Determine the most lucrative global markets by analyzing regional trends and pricing dynamics.
 
-### Property Type Value
+### 🏡 Property Type Value
+
 Identify which property categories generate the highest market value and investment potential.
 
-### Pricing Factors
+### 📈 Pricing Factors
+
 Investigate the factors influencing price variation, including:
+
 - Property size
 - Building age
 - Property type
@@ -82,7 +58,17 @@ Investigate the factors influencing price variation, including:
 
 ---
 
-# 📂 Dataset
+## ❓ Business Questions
+
+1. Which countries have the highest and lowest median property prices?
+2. Which property types are the most expensive?
+3. Is there a relationship between living area and price?
+4. Do newer buildings cost more than older ones?
+5. Which countries provide the strongest balance between affordability and investment potential?
+
+---
+
+# 📂 Dataset & Data Dictionary
 
 - **Dataset Name:** World's Real Estate Data (147K Listings)
 - **Source:** Kaggle
@@ -90,7 +76,8 @@ Investigate the factors influencing price variation, including:
 - **Countries Covered:** 27
 - **File:** `world_real_estate_data(147k).csv`
 
-### Dataset Link
+## 🔗 Dataset Link
+
 https://www.kaggle.com/datasets/toriqulstu/worlds-real-estate-data147k
 
 > ⚠️ To run this notebook, download the CSV file from Kaggle and place it in the same directory as the notebook.
@@ -116,28 +103,18 @@ https://www.kaggle.com/datasets/toriqulstu/worlds-real-estate-data147k
 | `image` | str | URL pointing to the property listing image (expired) |
 | `url` | str | URL pointing to the original property listing page (expired) |
 | `property_type` ⚙️ | str | Extracted property type (apartment, villa, studio, etc.) |
-| `price_per_sqm` ⚙️ | float | Property price per square meter in USD, calculated as `price_in_USD / apartment_total_area` |
-| `building_age` ⚙️ | float | Age of the building in years as of 2026, calculated as `2026 - building_construction_year` |
+| `price_per_sqm` ⚙️ | float | Property price per square meter in USD |
+| `building_age` ⚙️ | float | Age of the building in years |
 
 > ⚙️ = Feature engineered during analysis
 
 ---
 
-# ❓ Business Questions
-
-1. Which countries have the highest and lowest median property prices?
-2. Which property types are the most expensive?
-3. Is there a relationship between living area and price?
-4. Do newer buildings cost more than older ones?
-5. Which countries provide the strongest balance between affordability and investment potential?
-
----
-
-# 🛠️ Data Cleaning & Preparation
+# 🛠️ Data Cleaning & Feature Engineering
 
 The dataset required extensive preprocessing before analysis.
 
-### Cleaning Steps Performed
+## ✔ Cleaning Steps Performed
 
 ```text
 ✔ Checked for and removed duplicate rows
@@ -155,10 +132,10 @@ The dataset required extensive preprocessing before analysis.
 
 Several analytical features were engineered to improve the quality of the analysis.
 
-### Engineered Features
+## `property_type`
 
-#### `property_type`
 Extracted from listing titles to classify properties into categories such as:
+
 - Villa
 - Apartment
 - Studio
@@ -166,7 +143,10 @@ Extracted from listing titles to classify properties into categories such as:
 - Chalet
 - Condo
 
-#### `price_per_sqm`
+---
+
+## `price_per_sqm`
+
 Calculated using:
 
 ```python
@@ -175,7 +155,10 @@ price_in_USD / apartment_total_area
 
 This metric normalized pricing across properties of different sizes for fair comparison.
 
-#### `building_age`
+---
+
+## `building_age`
+
 Calculated using:
 
 ```python
@@ -196,17 +179,31 @@ This enabled age-based market trend analysis.
 
 ---
 
-# 📊 Analysis Highlights
+# 📊 Analysis & Visual Insights
 
-The analysis included:
+## 🌍 Median Property Prices by Country
 
-- Median property price by country
-- Property type pricing comparison
-- Living area vs price correlation analysis
-- Building age pricing trends
-- Country-level affordability analysis
-- Property value distribution analysis
-- Price-per-square-meter comparisons
+![Median Price by Country](images/median-price-country.png)
+
+---
+
+## 🏡 Property Type Price Comparison
+
+![Property Type Prices](images/property-type-prices.png)
+
+---
+
+## 📈 Living Area vs Price Correlation
+
+![Area vs Price](images/area-vs-price.png)
+
+> Strong positive relationship identified between property size and listing price (Pearson correlation: 0.679).
+
+---
+
+## 🏗️ Building Age Analysis
+
+![Building Age Analysis](images/building-age-analysis.png)
 
 ---
 
@@ -262,7 +259,9 @@ Matplotlib
 Jupyter Notebook
 ```
 
-### Core Skills Applied
+---
+
+# 💡 Core Skills Applied
 
 - Exploratory Data Analysis (EDA)
 - Data Cleaning
@@ -318,5 +317,7 @@ jupyter notebook project.ipynb
 
 **Ebrahim Alsawan**
 
-### Connect With Me
+## 🔗 Connect With Me
+
 - LinkedIn: https://www.linkedin.com/in/ebrahim-alsawan-a6977a2b9/
+- GitHub: https://github.com/
